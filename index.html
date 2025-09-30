@@ -9,12 +9,12 @@
 <body>
 
 <dialog id="addBookDialog">
-  <form>
+  <form id="form">
     <label for="Title">Title</label>
     <input type="text" id="title">
 
     <label for="Author">Author</label>
-    <input type="text" id="author">
+    <input type="text" id="author" autofocus>
 
     <label for="page-count">Number of Pages</label>
     <input type="text" id="page-count">
@@ -22,7 +22,7 @@
     <label for="read-status">Already Read?</label>
     <input type="checkbox" id="read-status">
 
-    <button id="submitFormButton">Submit</button>
+    <button id="submitFormButton" formmethod="dialog">Submit</button>
   </form>
 </dialog>
 

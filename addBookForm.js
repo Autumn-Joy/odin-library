@@ -1,15 +1,17 @@
-import { createBook, addBookToLibrary, displayAllBooks } from "./book.js"
+import { createBook, addBookToLibrary } from "./book.js"
+import { displayAllBooks } from "./dom.js"
 
 const AddBookButton = document.createElement('button')
 AddBookButton.id = "addBookButton"
 AddBookButton.textContent = "Add a Book"
 
 const dialog = document.getElementById('addBookDialog')
-const submitButton = document.getElementById('submitFormButton')
+const form = document.getElementById('form')
 const titleField = document.getElementById('title')
 const authorField = document.getElementById("author")
 const pageCountField = document.getElementById("page-count")
 const readStatusField = document.getElementById("read-status")
+const submitButton = document.getElementById('submitFormButton')
 
 AddBookButton.addEventListener("click", displayDialog)
 
@@ -30,6 +32,7 @@ function handleForm(event) {
 
   addBookToLibrary(newBook)
   displayAllBooks()
+  form.reset()
   dialog.close()
 }
 
