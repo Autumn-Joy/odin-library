@@ -5,15 +5,17 @@ const myLibrary = [];
 // but looking forward to using the `class` keyword instead
 // refactoring this to align with ES6 Classes is an upcoming exercise
 
-function Book(title, author, id) {
+function Book(title, author, pageCount, readStatus, id) {
   this.title = title;
   this.author = author;
+  this.pageCount = pageCount;
+  this.readStatus = readStatus;
   this.id = id
 }
 
-function createBook(title, author) {
+function createBook(title, author, pageCount, readStatus) {
   const id = crypto.randomUUID()
-  return new Book(title, author, id)
+  return new Book(title, author, pageCount, readStatus, id)
 }
 
 function addBookToLibrary(book) {
@@ -24,8 +26,9 @@ function addBookToLibrary(book) {
 function displayAllBooks() {
   bookList.innerHTML = ''
   myLibrary.forEach(book => {
+  const hasRead = book.readStatus ? 'complete ✅  ~~' : 'not read ❌  ~~'
   const bookItem = document.createElement('p')
-  bookItem.textContent = `${book.title}; written by ${book.author}; ID: ${book.id}`
+  bookItem.textContent = `${book.title}, written by ${book.author}, has ${book.pageCount} pages; read status: ${hasRead} ID: ${book.id}`
   bookItem.className = 'bookItem'
   bookList.appendChild(bookItem)
   });

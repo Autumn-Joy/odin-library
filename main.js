@@ -8,8 +8,8 @@ bookList.id = "bookList"
 document.body.appendChild(bookList)
 
 // placeholder books
-const Hobbit = createBook("Hobbit", "JRR")
-const OtherBook = createBook("Other Book", "Unknown")
+const Hobbit = createBook("Hobbit", "JRR", 199, true)
+const OtherBook = createBook("Other Book", "Unknown", 8000, false)
 
 addBookToLibrary(Hobbit)
 addBookToLibrary(OtherBook)
