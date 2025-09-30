@@ -1,5 +1,4 @@
 import { AddBookButton } from "./addBookForm.js"
-import { library } from "./book.js"
 
 const bookList = document.createElement('div')
 bookList.id = "bookList"
