@@ -1,4 +1,4 @@
-const myLibrary = [];
+const library = [];
 
 // currently following the "prototype pattern"
 // as Odin instructed
@@ -19,19 +19,10 @@ function createBook(title, author, pageCount, readStatus) {
 }
 
 function addBookToLibrary(book) {
-  myLibrary.push(book)
+  library.push(book)
   return book
 }
 
-function displayAllBooks() {
-  bookList.innerHTML = ''
-  myLibrary.forEach(book => {
-  const hasRead = book.readStatus ? 'complete ✅  ~~' : 'not read ❌  ~~'
-  const bookItem = document.createElement('p')
-  bookItem.textContent = `${book.title}, written by ${book.author}, has ${book.pageCount} pages; read status: ${hasRead} ID: ${book.id}`
-  bookItem.className = 'bookItem'
-  bookList.appendChild(bookItem)
-  });
-}
 
-export { createBook, addBookToLibrary, displayAllBooks }
+
+export { library, createBook, addBookToLibrary }

@@ -1,11 +1,5 @@
-import { createBook, addBookToLibrary, displayAllBooks } from './book.js'
-import { AddBookButton } from '/addBookForm.js'
-
-
-// extract to a seperate dom module?
-const bookList = document.createElement('div')
-bookList.id = "bookList"
-document.body.appendChild(bookList)
+import { createBook, addBookToLibrary } from './book.js'
+import { displayAllBooks } from './dom.js'
 
 // placeholder books
 const Hobbit = createBook("Hobbit", "JRR", 199, true)
@@ -14,10 +8,9 @@ const OtherBook = createBook("Other Book", "Unknown", 8000, false)
 addBookToLibrary(Hobbit)
 addBookToLibrary(OtherBook)
 
-//on load, show all current books in the 'myLibrary' array
+//on load, show all current books in the 'library' array
 displayAllBooks()
 
 //the addBook button should display below the book list.
-bookList.appendChild(AddBookButton)
 
 // no storage outside of current session, on refresh everything goes away
