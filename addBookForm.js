@@ -10,13 +10,18 @@ const form = document.getElementById('form')
 const titleField = document.getElementById('title')
 const authorField = document.getElementById("author")
 const pageCountField = document.getElementById("page-count")
-const readStatusField = document.getElementById("read-status")
-const submitButton = document.getElementById('submitFormButton')
+const readStatusField = document.getElementById("read-status-yes")
+const submitButton = document.getElementById('submit-form-button')
+const closeFormButton = document.getElementById("close-form-button")
 
 AddBookButton.addEventListener("click", displayDialog)
 
 function displayDialog() {
   dialog.showModal()
+}
+
+function getReadStatus() {
+  return document.getElementById("read-status-yes").checked ? true : false
 }
 
 submitButton.addEventListener("click", handleForm)
@@ -27,13 +32,15 @@ function handleForm(event) {
   const title = titleField.value
   const author = authorField.value
   const pageCount = pageCountField.value
-  const readStatus = readStatusField.value
+  const readStatus = getReadStatus()
+  console.log(readStatus)
   const newBook = createBook(title, author, pageCount, readStatus)
-
   addBookToLibrary(newBook)
   displayAllBooks()
   form.reset()
   dialog.close()
 }
+
+closeFormButton.addEventListener("click", dialog.close())
 
 export { AddBookButton }

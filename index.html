@@ -19,10 +19,19 @@
     <label for="page-count">Number of Pages</label>
     <input type="text" id="page-count">
 
-    <label for="read-status">Already Read?</label>
-    <input type="checkbox" id="read-status">
+    <label for="read-status">Already Read?
+      <input type="radio" id="read-status-yes" name="read-status" value="true">
+      <label for="read-status-yes">Yes</label><br>
 
-    <button id="submitFormButton" formmethod="dialog">Submit</button>
+      <input type="radio" id="read-status-no" name="read-status" value="false">
+      <label for="read-status-no">No</label><br>
+    </label>
+
+
+
+
+    <button id="submit-form-button" formmethod="dialog">Submit</button>
+    <button id="close-form-button" formmethod="dialog">Cancel</button>
   </form>
 </dialog>
 
