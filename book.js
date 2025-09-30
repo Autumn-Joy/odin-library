@@ -23,6 +23,4 @@ function addBookToLibrary(book) {
   return book
 }
 
-
-
 export { library, createBook, addBookToLibrary }
