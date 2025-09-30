@@ -8,34 +8,27 @@
 </head>
 <body>
 <h1>Your Odin Library</h1>
-<dialog id="addBookDialog">
-  <form id="form">
-    <label for="title">Title
-      <input type="text" id="title" required>
-    </label>
-
-    <label for="author">Author
-      <input type="text" id="author" autofocus required>
-    </label>
-
-    <label for="page-count">Number of Pages
-      <input type="text" id="page-count" required>
-    </label>
-
-    <label for="read-status" class="radio-label">Already Read?
-      <input type="radio" id="read-status-yes" name="read-status" value="true">
-      <label for="read-status-yes">Yes</label><br>
-
-      <input type="radio" id="read-status-no" name="read-status" value="false">
-      <label for="read-status-no">No</label><br>
-    </label>
-    <button id="submit-form-button" formmethod="dialog">Submit</button>
-    <button id="close-form-button" formnovalidate>Cancel</button>
-
-  </form>
-</dialog>
-
-
+  <dialog id="addBookDialog">
+    <form id="form">
+      <label for="title">Title
+        <input type="text" id="title" required>
+      </label>
+      <label for="author">Author
+        <input type="text" id="author" autofocus required>
+      </label>
+      <label for="page-count">Number of Pages
+        <input type="text" id="page-count" required>
+      </label>
+      <label for="read-status" class="radio-label">Already Read?
+        <input type="radio" id="read-status-yes" name="read-status" value="true">
+        <label for="read-status-yes">Yes</label><br>
+        <input type="radio" id="read-status-no" name="read-status" value="false">
+        <label for="read-status-no">No</label><br>
+      </label>
+      <button id="submit-form-button" formmethod="dialog">Submit</button>
+      <button id="close-form-button" formnovalidate>Cancel</button>
+    </form>
+  </dialog>
 </body>
 <script type="module" src="main.js"></script>
 </html>
