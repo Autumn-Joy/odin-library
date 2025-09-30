@@ -1,38 +1,23 @@
+import { createBook, addBookToLibrary, displayAllBooks } from './book.js'
+import { AddBookButton } from '/addBookForm.js'
+
+
+// extract to a seperate dom module?
 const bookList = document.createElement('div')
 bookList.id = "bookList"
 document.body.appendChild(bookList)
 
-function Book(title, author, id) {
-  this.title = title;
-  this.author = author;
-  this.id = id
-}
-
-function createBook(title, author) {
-  const id = crypto.randomUUID()
-  return new Book(title, author, id)
-}
-
+// placeholder books
 const Hobbit = createBook("Hobbit", "JRR")
 const OtherBook = createBook("Other Book", "Unknown")
-
-const myLibrary = [];
-
-function addBookToLibrary(book) {
-  myLibrary.push(book)
-  return book
-}
 
 addBookToLibrary(Hobbit)
 addBookToLibrary(OtherBook)
 
-function displayAllBooks() {
-  myLibrary.forEach(book => {
-  const bookItem = document.createElement('p')
-  bookItem.textContent = `${book.title}; written by ${book.author}; ID: ${book.id}`
-  bookItem.className = 'bookItem'
-  bookList.appendChild(bookItem)
-  });
-}
-
+//on load, show all current books in the 'myLibrary' array
 displayAllBooks()
+
+//the addBook button should display below the book list.
+bookList.appendChild(AddBookButton)
+
+// no storage outside of current session, on refresh everything goes away
