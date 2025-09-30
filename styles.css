@@ -1,0 +1,28 @@
+div {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(174, 205, 205);
+}
+
+.bookItem {
+  background-color: rgb(163, 163, 212);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#bookList {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  justify-content: center;
+  width: 75vw;
+  height: 75vh;
+  background-color: bisque;
+  border-radius: 5%;
+}
