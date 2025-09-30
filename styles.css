@@ -3,17 +3,19 @@
 }
 
 #bookList {
+  scroll-behavior: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 75vw;
-  height: 75vh;
+  min-height: 75vh;
   background-color: rgba(168, 183, 140, 0.742);
   border-radius: 2rem;
+  padding: 2rem;
 }
 
-.bookItem {
+.bookCard {
   background-color: rgb(163, 163, 212);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
@@ -21,12 +23,12 @@
   margin: 1rem;
 }
 
-#addBookButton {
+#addBookButton, #removeBookButton {
   padding: 1rem;
+  margin: 1rem;
   border-radius: .5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
 }
-
 
 body {
   display: flex;
