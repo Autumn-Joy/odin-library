@@ -1,16 +1,14 @@
 import { createBook, addBookToLibrary } from './book.js'
-import { displayAllBooks } from './dom.js'
+import { buildBookList } from './dom.js'
 
-// placeholder books
-const Hobbit = createBook("Hobbit", "JRR", 199, true)
-const OtherBook = createBook("Other Book", "Unknown", 8000, false)
+// create placeholder books
+const Hobbit = createBook("The Hobbit", "JRR Tolkien", 199, true)
+const OtherBook = createBook("The Lord of the Rings", "JRR Tolkien", 8000, false)
 
 addBookToLibrary(Hobbit)
 addBookToLibrary(OtherBook)
 
 //on load, show all current books in the 'library' array
-displayAllBooks()
-
-//the addBook button should display below the book list.
+buildBookList()
 
 // no storage outside of current session, on refresh everything goes away

@@ -1,5 +1,5 @@
 import { createBook, addBookToLibrary } from "./book.js"
-import { displayAllBooks } from "./dom.js"
+import { buildBookList } from "./dom.js"
 
 const AddBookButton = document.createElement('button')
 AddBookButton.id = "addBookButton"
@@ -10,7 +10,6 @@ const form = document.getElementById('form')
 const titleField = document.getElementById('title')
 const authorField = document.getElementById("author")
 const pageCountField = document.getElementById("page-count")
-const readStatusField = document.getElementById("read-status-yes")
 const submitButton = document.getElementById('submit-form-button')
 const closeFormButton = document.getElementById("close-form-button")
 
@@ -36,7 +35,7 @@ function handleForm(event) {
   console.log(readStatus)
   const newBook = createBook(title, author, pageCount, readStatus)
   addBookToLibrary(newBook)
-  displayAllBooks()
+  buildBookList()
   form.reset()
   dialog.close()
 }
