@@ -32,7 +32,6 @@ function handleForm(event) {
   const author = authorField.value
   const pageCount = pageCountField.value
   const readStatus = getReadStatus()
-  console.log(readStatus)
   const newBook = createBook(title, author, pageCount, readStatus)
   addBookToLibrary(newBook)
   buildBookList()
