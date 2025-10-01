@@ -13,6 +13,10 @@ function Book(title, author, pageCount, readStatus, id) {
   this.id = id
 }
 
+Book.prototype.toggleReadStatus = function() {
+  this.readStatus ? this.readStatus = false : this.readStatus = true
+}
+
 function createBook(title, author, pageCount, readStatus) {
   const id = crypto.randomUUID()
   return new Book(title, author, pageCount, readStatus, id)
@@ -23,4 +27,4 @@ function addBookToLibrary(book) {
   return book
 }
 
-export { library, createBook, addBookToLibrary }
+export { library, createBook, addBookToLibrary, Book }
